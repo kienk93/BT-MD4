@@ -8,6 +8,23 @@
 <body>
 
 
+<form>
+    <input type="checkbox" name="abc" id="Tomato" value="Tomato">
+    <label for="Tomato">Tomato</label>
+    <input type="checkbox" name="abc" id="Mustard" value="Mustard">
+    <label for="Mustard">Mustard</label>
+    <input type="checkbox" name="abc" id="Lettuce" value="Lettuce">
+    <label for="Lettuce">Lettuce</label>
+    <input type="checkbox" name="abc" id="Sprouts" value="Sprouts">
+    <label for="Sprouts">Sprouts</label>
+    <button>Add</button>
+</form>
+<c:forEach items="${condiments}" var="abc">
+    <span><c:out value="${abc}"></c:out></span>
+</c:forEach>
+</body>
+</html>
+
 
 <form>
     <input type="checkbox" name="abc" id="Tomato" value="Tomato">

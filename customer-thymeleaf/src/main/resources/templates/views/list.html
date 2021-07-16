@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Customer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+<a type="button" class="btn btn-primary" th:href="@{/customers/create}">Create Customer</a>
+<form>
+    <input type="search" name="search">
+    <button>Search</button>
+</form>
+<form action="/customers" method="post">
+    <table class="table table-light">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Description</th>
+            <th scope="col">Role</th>
+            <th scope="col" colspan="2">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cus : ${customers_list}">
+            <th scope="col" th:text="${cus.id}"></th>
+            <th scope="col" th:text="${cus.name}"></th>
+            <th scope="col" th:text="${cus.price}"></th>
+            <th scope="col" th:text="${cus.description}"></th>
+            <th scope="col" th:text="${cus.role.name}"></th>
+            <th scope="col" ><a th:href="@{/customers/edit/__${cus.id}__}">Edit</a></th>
+            <th scope="col" ><a th:href="@{/customers/delete/__${cus.id}__}">Delete</a></th>
+        </tr>
+        </tbody>
+    </table>
+
+</form>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</html>
