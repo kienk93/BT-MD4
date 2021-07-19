@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="img-nasa" style="width: 500px"><br>
+<a href="/comment">CreateComment</a>
+
+<div>
+    <table border="1px">
+        <tr th:each="img : ${imgs}">
+            <td th:text="${img.id}"></td>
+            <td th:text="${img.author}"></td>
+            <td th:text="${img.feedback}"></td>
+            <td th:text="${img.mark}"></td>
+        </tr>
+    </table>
+
+</div>
+<script>
+    let query = 'https://api.nasa.gov/planetary/apod?api_key=WYCiifiUGryulbsFWCy5N2hgbqsCuqBjObk0oSem';
+    let rq = new XMLHttpRequest();
+    rq.open('GET', query);
+    rq.onload = function (){
+        if(rq.status === 200) {
+            let rs = JSON.parse(rq.responseText);
+            document.getElementById('img-nasa').setAttribute('src',rs.url);
+        }
+    }
+    rq.send();
+</script>
+</body>
+</html>

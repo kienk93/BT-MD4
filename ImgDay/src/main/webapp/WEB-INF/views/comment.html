@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/img">Back</a>
+<div>
+  <form action="/comment" th:object="${img}" method="post">
+
+          <td><input th:field="*{author}" placeholder="author"></td> <br>
+          <td><input th:field="*{feedback}" placeholder="comment"></td><br>
+          <td><input th:field="*{mark}" placeholder="mark"></td><br>
+    <button>Save</button>
+  </form>
+</div>
+</body>
+</html>
