@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--// Link với thymeleaf-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HomePageBlog</title>
+    <!--    //Link với bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            crossorigin="anonymous"></script>
+
+    <!--    //Link với JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<a th:href="@{/blogs/create}">Create Blog</a>
+    <table class="table table-striped" style="text-align: center">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Comment</th>
+            <th scope="col" colspan="3">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="blog : ${blogs__list}">
+            <th scope="row" th:text="${blog.id}"></th>
+            <td th:text="${blog.title}"></td>
+            <td th:text="${blog.description}"></td>
+            <td th:text="${blog.comment.content}"></td>
+            <td><a th:href="@{/blogs/edit/__${blog.id}__}">Edit</a></td>
+            <td><a th:href="@{/blogs/delete/__${blog.id}__}">Delete</a></td>
+            <td><a th:href="@{/blogs/view/__${blog.id}__}">View</a></td>
+        </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>

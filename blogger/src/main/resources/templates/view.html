@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CreateForm</title>
+    <!--    //Link với bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <!--    //Link với JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<form th:object="${blogs}" action="/blogs/view" method="post">
+    <fieldset disabled>
+        <div class="form-group">
+            <label for="disabledTextInput">Title</label>
+            <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" th:field="*{title}">
+        </div>
+        <div class="form-group">
+            <label for="disabledTextInput">Title</label>
+            <input type="text" class="form-control" placeholder="Disabled input" th:field="*{description}">
+        </div>
+
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
