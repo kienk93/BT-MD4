@@ -1,14 +1,28 @@
-//package com.codegym.repository;
+package com.example.imgoftheday.repository;
+
+
+import com.example.imgoftheday.model.Img;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface IImgRepository extends JpaRepository<Img, Long> {
+
+
+
+
+
+
+}
+
+//    List<Img> findAll();
 //
-//import com.codegym.model.Img;
+//    Img findById(Long id);
 //
-//import javax.persistence.EntityManager;
-//import javax.persistence.NoResultException;
-//import javax.persistence.PersistenceContext;
-//import javax.persistence.TypedQuery;
-//import javax.transaction.Transactional;
-//import java.util.List;
+//    void save(Img img);
 //
+//    void remove(Long id);
+
 //@Transactional
 //public class ImgRepository implements IImgRepository{
 //    @PersistenceContext
@@ -47,4 +61,3 @@
 //        }
 //
 //    }
-//}

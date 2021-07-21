@@ -2,8 +2,6 @@ package com.codegym.config;
 
 import com.codegym.repository.IImgRepository;
 import com.codegym.repository.ImgRepository;
-import com.codegym.service.IImgService;
-import com.codegym.service.ImgService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
